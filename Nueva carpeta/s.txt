@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poderes de Hammerschlag</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #1a0000 0%, #000000 100%);
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    header h1 {
+      font-size: 3.5em;
+      color: #ff4c4c;
+      text-shadow: 0 0 10px #ff0000;
+      margin-bottom: 10px;
+    }
+    .wrapper {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+    .powers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .power {
+      background: rgba(20, 0, 0, 0.8);
+      border: 2px solid #ff1f1f;
+      border-radius: 15px;
+      padding: 25px;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .power:hover {
+      transform: translateY(-10px);
+    }
+    .power h2 {
+      color: #ff3333;
+      font-size: 1.7em;
+      margin-bottom: 10px;
+    }
+    .power p {
+      color: #ccc;
+    }
+    .power::before {
+      content: "";
+      background: url('A_digital_illustration_with_comic_book_and_infogra.png') no-repeat center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.05;
+      border-radius: 15px;
+      z-index: 0;
+    }
+    .power * {
+      position: relative;
+      z-index: 1;
+    }
+    .power:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -35px;
+      left: 10px;
+      background: #ff0000;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+      z-index: 2;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      background: #ff0000;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #cc0000;
+    }
+    .audio-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+      transition: background 0.3s;
+    }
+    .audio-btn:hover {
+      background: #cc0000;
+    }
+    .secret-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: #ff0000;
+      cursor: pointer;
+      z-index: 100;
+    }
+    .explosion {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      color: red;
+      font-size: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeout 5s ease forwards;
+    }
+    .laser {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 100vh;
+      background: red;
+      box-shadow: 0 0 15px red;
+      animation: shoot 0.6s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9998;
+    }
+    @keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    @keyframes shoot {
+      0% { height: 0; }
+      100% { height: 100vh; }
+    }
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Los Poderes de Hammerschlag</h1>
+  </header>
+
+  <div class="wrapper">
+    <section class="powers">
+       <div class="power" data-tooltip="Gran truco">
+        <h2>Aprendizaje</h2>
+        <p>Al acabar con sus enemigos sabe nuevas formas de pelear, incluso se vuelve mas fuerte.</p>
+      </div>
+      <div class="power" data-tooltip="Así se repara un mundo">
+        <h2>Visión de Calor</h2>
+        <p>Sus rayos pueden acabar con planetas. Cuanto más energía acumula, más letal se vuelve.</p>
+      </div>
+       <div class="power" data-tooltip="Una debilidad para explotar">
+        <h2>Estrategico</h2>
+        <p>Es capaz de aprender los movimientos de sus enemigos y atacar con sus debilidades.</p>
+      </div>
+      <div class="power" data-tooltip="Muy lento, muy débil, muy fácil">
+        <h2>Visión Nuclear</h2>
+        <p>Detecta y absorbe energía radioactiva de cualquier fuente cercana como estrellas o bases nucleares.</p>
+      </div>
+      <div class="power" data-tooltip="¿Eso fue el golpe más fuerte?">
+        <h2>Superfuerza</h2>
+        <p>Puede aplastar tanques con las manos desnudas sin esfuerzo.</p>
+      </div>
+      <div class="power" data-tooltip="En serio eres una decepción para todos">
+        <h2>Supervelocidad</h2>
+        <p>Corre más rápido que la luz. Capaz de volar y viajar entre universos.</p>
+      </div>
+      <div class="power" data-tooltip="¡wow! no te atravesé... qué prodigio">
+        <h2>Resistencia Total</h2>
+        <p>No siente dolor. Golpes, balas o explosiones no lo mueven ni un centímetro... si son debiles.</p>
+      </div>
+      <div class="power" data-tooltip="¿Cómo reaccionará el mundo al ver a su héroe caer?">
+        <h2>Manipulación Psicológica</h2>
+        <p>Ataca la mente de sus enemigos con palabras que destruyen la voluntad.</p>
+      </div>
+      <div class="power" data-tooltip="Vuela como un dios... o sobre el">
+        <h2>Vuelo Supersónico</h2>
+        <p>Surca los cielos a velocidades que atraviesan la atmósfera en segundos.</p>
+      </div>
+    </section>
+
+    <h2 style="text-align: center; color: #ff4c4c; margin-top: 80px; text-shadow: 0 0 10px #ff0000;">Debilidades de Hammerschlag</h2>
+    <section class="powers" style="margin-top: 20px;">
+      <div class="power" data-tooltip="La única forma de frenarlo">
+        <h2>Debilidad 1: Astato</h2>
+        <p>El único elemento que puede afectarlo.</p>
+      </div>
+      <div class="power" data-tooltip="Busquemos un poco de radiacion">
+        <h2>Debilidad 2: falta de energia nuclear</h2>
+        <p>Si no tiene suficiente energia sus poderes no son tan fuertes.</p>
+      </div>
+    </section>
+
+    
+    <div class="cta" style="margin-top: 60px;">
+    <a href="https://www.youtube.com/@hammerschlag38/featured" target="_blank">Ver historia completa</a>
+  </div>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio id="bgmusic" src="epic-majestic-sci-fi-intro-314125.mp3" loop></audio>
+  <button class="audio-btn" onclick="document.getElementById('bgmusic').play(); this.style.display='none';">🔊 Activar música</button>
+  <button class="secret-icon" onclick="clickSecret()">☠️</button>
+
+  <script>
+    let clicks = 0;
+    function clickSecret() {
+      clicks++;
+      if (clicks === 38) {
+        const laser = document.createElement('div');
+        laser.className = 'laser';
+        document.body.appendChild(laser);
+
+        setTimeout(() => {
+          const explosion = document.createElement('div');
+          explosion.className = 'explosion';
+          explosion.textContent = '⚡ ¡HAMMERSCHLAG DESTRUYÓ ESTA PÁGINA! ⚡';
+          document.body.appendChild(explosion);
+          document.body.innerHTML = explosion.outerHTML;
+        }, 800);
+      }
+    }
+  </script>
+</body>
+</html>
